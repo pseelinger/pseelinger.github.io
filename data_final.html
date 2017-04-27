@@ -23,6 +23,27 @@
       background-color: #f1f1f1;
       height: 100%;
     }
+    button{
+      border: none;
+      background: none;
+      margin: 5px;
+      color: white;
+    }
+    #morning{
+      background-color: purple;
+    }
+    #afternoon{
+      background-color: yellow;
+    }
+    #evening{
+      background-color: red;
+    }
+    #night{
+      background-color: cornflowerblue;
+    }
+    #reset{
+      background-color: green;
+    }
 
     /* Set black background color, white text and some padding */
     footer {
@@ -116,11 +137,11 @@
 
 <p>The map on this page displays all the crashes that took place in Chapel Hill (pedestrian, bike, multiple driver, and single driver) from 2010 to 2016. Many of the locations are approximated using the Google Maps Geocoding service, since many of the reports list a street with no number address. The colors represent various times of day when the crashes took place as follows:</p>
 
-<p><button onclick='setURL("https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ+where+col7+%3D+&#39;MORNING&#39;&amp;viz=MAP&amp;h=false&amp;lat=35.913613894369576&amp;lng=-79.0336783711914&amp;t=1&amp;z=12&amp;l=col9&amp;y=2&amp;tmplt=2&amp;hml=GEOCODABLE")'>Morning (Purple): 4:00 AM to 12:00 PM</button>
-</br><button onclick='setURL("https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ+where+col7+%3D+%27AFTERNOON%27&viz=MAP&h=false&lat=35.913613894369576&lng=-79.0336783711914&t=1&z=12&l=col9&y=2&tmplt=2&hml=GEOCODABLE")'>Afternoon (Yellow): 12:00 PM to 5:00 PM </button>
-</br><button onclick="setURL('https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ+where+col7+%3D+%27EVENING%27&viz=MAP&h=false&lat=35.913613894369576&lng=-79.0336783711914&t=1&z=12&l=col9&y=2&tmplt=2&hml=GEOCODABLE')">Evening (Red): 5:00 PM to 8:00 PM</button> </br>
-<button onclick="setURL('https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ+where+col7+%3D+%27NIGHT%27&viz=MAP&h=false&lat=35.913613894369576&lng=-79.0336783711914&t=1&z=12&l=col9&y=2&tmplt=2&hml=GEOCODABLE')">Night (Blue): 8:00 PM to 4:00 AM </button></br>
-<button onclick="setURL('https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ&amp;viz=MAP&amp;h=false&amp;lat=35.913613894369576&amp;lng=-79.0336783711914&amp;t=1&amp;z=12&amp;l=col9&amp;y=2&amp;tmplt=2&amp;hml=GEOCODABLE')">Reset</button>   </p>
+<p><button id="morning" onclick='setURL("https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ+where+col7+%3D+&#39;MORNING&#39;&amp;viz=MAP&amp;h=false&amp;lat=35.913613894369576&amp;lng=-79.0336783711914&amp;t=1&amp;z=12&amp;l=col9&amp;y=2&amp;tmplt=2&amp;hml=GEOCODABLE")'>Morning (Purple): 4:00 AM to 12:00 PM</button>
+</br><button id="afternoon" onclick='setURL("https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ+where+col7+%3D+%27AFTERNOON%27&viz=MAP&h=false&lat=35.913613894369576&lng=-79.0336783711914&t=1&z=12&l=col9&y=2&tmplt=2&hml=GEOCODABLE")'>Afternoon (Yellow): 12:00 PM to 5:00 PM </button>
+</br><button id="evening" onclick="setURL('https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ+where+col7+%3D+%27EVENING%27&viz=MAP&h=false&lat=35.913613894369576&lng=-79.0336783711914&t=1&z=12&l=col9&y=2&tmplt=2&hml=GEOCODABLE')">Evening (Red): 5:00 PM to 8:00 PM</button> </br>
+<button id="night" onclick="setURL('https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ+where+col7+%3D+%27NIGHT%27&viz=MAP&h=false&lat=35.913613894369576&lng=-79.0336783711914&t=1&z=12&l=col9&y=2&tmplt=2&hml=GEOCODABLE')">Night (Blue): 8:00 PM to 4:00 AM </button></br>
+<button id="reset" onclick="setURL('https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ&amp;viz=MAP&amp;h=false&amp;lat=35.913613894369576&amp;lng=-79.0336783711914&amp;t=1&amp;z=12&amp;l=col9&amp;y=2&amp;tmplt=2&amp;hml=GEOCODABLE')">Reset</button>   </p>
 <iframe id="frame" width="1000" height="500" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col9+from+1umM1zpQFjGj4Oa-S0ZJyfqa4OPItUKD0xdEGFnpQ&amp;viz=MAP&amp;h=false&amp;lat=35.913613894369576&amp;lng=-79.0336783711914&amp;t=1&amp;z=12&amp;l=col9&amp;y=2&amp;tmplt=2&amp;hml=GEOCODABLE"></iframe>
 <script>
 function setURL(url){
